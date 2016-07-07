@@ -1,0 +1,2 @@
+module ClearanceOmniauth
+end
