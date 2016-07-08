@@ -15,10 +15,10 @@ module ClearanceOmniauth
     # end
     # ```
     # @param provider [Symbol]
-    # @param attrs [Array]
+    # @param params [Array]
     # @return [Array<ClearanceOmniauth::Provider>] List of ClearanceOmniauth's providers
-    def provider(provider, *attrs)
-      @providers << ([provider] | attrs)
+    def provider(provider, *params)
+      @providers << ClearanceOmniauth::Provider.new(provider: provider, params: params)
     end
   end
 
