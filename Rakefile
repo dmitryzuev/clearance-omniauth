@@ -1,34 +1,26 @@
-begin
-  require 'bundler/setup'
-rescue LoadError
-  puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
+require 'rubygems'
+require 'bundler/setup'
+require 'bundler/gem_tasks'
+
+require 'rake'
+require 'rspec/core/rake_task'
+
+namespace :dummy do
+  require_relative 'spec/dummy/application'
+  Dummy::Application.load_tasks
 end
 
-require 'rdoc/task'
-
-RDoc::Task.new(:rdoc) do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'ClearanceOmniauth'
-  rdoc.options << '--line-numbers'
-  rdoc.rdoc_files.include('README.rdoc')
-  rdoc.rdoc_files.include('lib/**/*.rb')
+desc 'Run specs other than spec/acceptance'
+RSpec::Core::RakeTask.new('spec') do |task|
+  task.exclude_pattern = 'spec/acceptance/**/*_spec.rb'
+  task.verbose = false
 end
 
-
-
-
-
-
-Bundler::GemHelper.install_tasks
-
-require 'rake/testtask'
-
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.libs << 'test'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = false
+desc 'Run acceptance specs in spec/acceptance'
+RSpec::Core::RakeTask.new('spec:acceptance') do |task|
+  task.pattern = 'spec/acceptance/**/*_spec.rb'
+  task.verbose = false
 end
 
-
-task default: :test
+desc 'Run the specs and acceptance tests'
+task default: %w(spec spec:acceptance)

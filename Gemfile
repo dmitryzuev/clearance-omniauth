@@ -13,9 +13,13 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 
+gem 'rails', '~> 4.2'
+
 group :development, :test do
   gem 'rubocop'
   gem 'pry-rails'
+  gem 'rspec-rails', '~> 3.1'
+  gem 'capybara', '~> 2.6'
 end
 
 gem 'clearance'
