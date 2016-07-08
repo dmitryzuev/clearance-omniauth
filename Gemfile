@@ -13,5 +13,11 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 
-gem 'rubocop', group: [:development, :test]
-gem 'pry-rails', group: [:development, :test]
+group :development, :test do
+  gem 'rubocop'
+  gem 'pry-rails'
+end
+
+gem 'clearance'
+gem 'omniauth'
+gem 'sqlite3'
