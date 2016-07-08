@@ -3,9 +3,14 @@ Rails:
 
 AllCops:
   Include:
-    - lib/**/*
-    - app/**/*
-    - test/**/*
+    - lib/**/*.rb
+    - app/**/*.rb
+    - spec/**/*.rb
+  Exclude:
+    - bin/**/*
+    - spec/dummy/bin/**/*
+    - spec/dummy/db/**/*
+    - spec/dummy/config/**/*
 
 Style/Documentation:
   Enabled: false

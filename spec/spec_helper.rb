@@ -1,7 +1,7 @@
 ENV['RAILS_ENV'] ||= 'test'
 
 require 'rails/all'
-require 'dummy/application'
+require 'dummy/config/application'
 
 # require 'factory_girl_rails'
 require 'rspec/rails'
