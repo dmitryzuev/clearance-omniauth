@@ -19,7 +19,9 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
   s.required_ruby_version = Gem::Requirement.new('>= 2.0')
 
-  s.add_dependency 'rails', '~> 4.2'
+  s.add_dependency 'rails', '>= 4.2'
+  s.add_dependency 'clearance', '>= 0.14'
+  s.add_dependency 'omniauth', '>= 1.3'
 
   # s.add_development_dependency 'sqlite3'
 end

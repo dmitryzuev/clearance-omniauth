@@ -1,0 +1,14 @@
+Rails:
+  Enabled: true
+
+AllCops:
+  Include:
+    - lib/**/*
+    - app/**/*
+    - test/**/*
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 100
