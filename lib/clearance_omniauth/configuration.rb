@@ -28,10 +28,10 @@ module ClearanceOmniauth
       @configuration ||= Configuration.new
     end
 
-    # Set ClearanceOmniauth's configuration
-    # @param config [ClearanceOmniauth::Configuration]
+    # Set Clearance's configuration
+    # @param config [Clearance::Configuration]
     # rubocop:disable Style/TrivialAccessors
-    def configuration=(config)
+    def self.configuration=(config)
       @configuration = config
     end
 

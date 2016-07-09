@@ -12,6 +12,7 @@ AllCops:
     - spec/dummy/bin/**/*
     - spec/dummy/db/**/*
     - spec/dummy/config/**/*
+    - doc/**/*
 
 Style/Documentation:
   Enabled: false
