@@ -22,6 +22,10 @@ group :development, :test do
   gem 'capybara', '~> 2.6'
 end
 
+group :test do
+  gem 'simplecov', require: false
+end
+
 gem 'clearance'
 gem 'omniauth'
 gem 'sqlite3'

@@ -2,6 +2,7 @@ Rails:
   Enabled: true
 
 AllCops:
+  TargetRubyVersion: 2.3
   Include:
     - lib/**/*.rb
     - app/**/*.rb
@@ -13,6 +14,9 @@ AllCops:
     - spec/dummy/config/**/*
 
 Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
   Enabled: false
 
 Metrics/LineLength:

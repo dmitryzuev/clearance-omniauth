@@ -1,19 +1,22 @@
 ENV['RAILS_ENV'] ||= 'test'
 
+require 'simplecov'
+SimpleCov.start do
+  add_filter 'spec'
+
+  add_group 'Lib', 'lib'
+end
+
 require 'rails/all'
 require 'dummy/config/application'
 
-# require 'factory_girl_rails'
 require 'rspec/rails'
-# require 'shoulda-matchers'
-# require 'timecop'
 
-Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+Dir[Rails.root.join('../../spec/support/**/*.rb')].each { |f| require f }
 
 Dummy::Application.initialize!
 
 RSpec.configure do |config|
-  # config.include FactoryGirl::Syntax::Methods
   config.infer_spec_type_from_file_location!
   config.order = :random
   config.use_transactional_fixtures = true

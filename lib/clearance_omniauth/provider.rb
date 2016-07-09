@@ -6,9 +6,9 @@ module ClearanceOmniauth
     # @return [Array] Provider's params
     attr_reader :params
 
-    def initialize(**args)
-      @provider = args.fetch(:provider)
-      @params = args.fetch(:params, nil)
+    def initialize(provider:, params: [])
+      @provider = provider
+      @params = params
     end
   end
 end

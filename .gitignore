@@ -17,3 +17,4 @@ db/*.sqlite3
 gemfiles/*.lock
 gemfiles/vendor/
 .yardoc/
+coverage/
